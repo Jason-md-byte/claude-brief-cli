@@ -107,6 +107,10 @@ npm run lint && npm run typecheck && npm run build
 
 The SDK is never called in tests; a fake `BriefClient` returns canned messages. Covered: schema validation, rendering, argument parsing, key/model resolution, every error mapping (using the SDK's real error classes), empty/oversized input, missing or malformed tool output, and CLI exit codes. CI runs install, lint, typecheck, test, and build on every push and PR.
 
+<img src="docs/tests.png" alt="Terminal output of vitest: 41 tests passing across 5 files, with 98% statement coverage" width="760">
+
+*Real output of `npx vitest run --coverage --reporter=verbose`, rendered to an image. The only edits are removing Node's colour-forcing warnings and shortening the local project path to `~/`.*
+
 ## Limitations
 
 - Input limit is 400k characters per run; there is no chunking.
